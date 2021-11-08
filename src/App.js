@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello word !
+        Hello world !
       </div>
     );
   }
