@@ -33,7 +33,12 @@ h1{
   border-radius: 30px;
   border-color: white;
   font-size: large;
-  font-family:Georgia, 'Times New Roman', Times, serif
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+.Rbutton {
+  display: flex;
+  justify-content: center;
+margin-right: 20px;
+}
 
