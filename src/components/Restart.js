@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 
 class Restart extends Component {
-    render() {
+
+    render(){
         return (
-            <div>
-                <div className = "Restart-button"> 
-                <button>Restart</button>  
-            </div>
-            </div>
-        );
-    }
+
+    <form>
+  <div className="Rbutton">
+    <button onClick="" value="Reset">Restart</button>
+  </div>
+</form>
+        
+      );
+}
+
 }
 
 export default Restart;
