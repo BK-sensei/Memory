@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello world !
+        <h1>MEMORY</h1>
       </div>
     );
   }
