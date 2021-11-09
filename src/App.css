@@ -3,8 +3,15 @@
   src: url(/src/font/one-piece-font.ttf);
 }
 
+/* APP.JS */
 h1{
   font-family: One Piece;
   font-size: 50px;
   text-align: center;
+}
+
+/* CARD.JS */
+.backCard{
+  height: 100px;
+  width: 70px;
 }

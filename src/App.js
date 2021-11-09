@@ -11,12 +11,16 @@ class App extends Component {
     return (
       <div>
         <h1>MEMORY GAME</h1>
-        {onePiece.map(character => (
-          <Card 
-            name= {character.name}
-            image= {character.imageRecto}
-          />
-        ))}
+        <div className="container">
+          <div className="row">
+            {onePiece.map(character => (
+            <Card 
+              name= {character.name}
+              image= {character.imageRecto}
+            />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }

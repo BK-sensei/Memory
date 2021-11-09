@@ -2,8 +2,8 @@
     "name" : "Luffy",
     "imageRecto" : "luffy"
 }, {
-    "name" : "Zorro" ,
-    "imageRecto" : "zorro"
+    "name" : "Zoro" ,
+    "imageRecto" : "zoro"
 },  {
     "name" : "Sanji",
     "imageRecto" : "sanji"
@@ -18,7 +18,7 @@
     "imageRecto" : "brook"
 },  {
     "name" : "Nico Robin",
-    "imageRecto" : "nico robin"
+    "imageRecto" : "nicoRobin"
 },  {
     "name" : "Chopper",
     "imageRecto" : "chopper"
@@ -30,13 +30,13 @@
     "imageRecto" : "ace"
 },  {
     "name" : "Trafalgar Law",
-    "imageRecto" : "trafalgar law"
+    "imageRecto" : "trafalgarLaw"
 },  {
     "name" : "Barbe Blanche",
-    "imageRecto" : "barbe blanche"
+    "imageRecto" : "barbeBlanche"
 },  {
     "name" : "Barbe Noire",
-    "imageRecto" : "barbe noire"
+    "imageRecto" : "barbeNoire"
 },  {
     "name" : "Baggy",
     "imageRecto" : "baggy"
@@ -60,5 +60,5 @@
     "imageRecto" : "franky"
 }, {
     "name" : "Gol D. Roger",
-    "imageRecto" : "gol d. roger"
+    "imageRecto" : "golDRoger"
 }]
