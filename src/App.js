@@ -1,6 +1,8 @@
 
 import onePiece from './one-piece.json'
 import './App.css';
+import Card from './components/Card';
+import "bootstrap/dist/css/bootstrap.min.css"
 import Restart from './components/Restart'
 import Counter from './components/Counter';
 import Victory from './components/Victory';
@@ -58,35 +60,43 @@ handleCounterComputer () {
     
     return (
 
-      <div>
-        <button
-
-          onClick={this.togglePopupRules.bind(this)}
-          type="button"
-          className="btn btn-primary">Règles du jeu</button>
-
-        {this.state.showPopup ?
-
-          <Rules
-            closePopup={this.togglePopupRules.bind(this)} />
-          : null
-        }
-      </div>
-
       <>
       
         { result ? (
             <>
-              <h1> MEMORY </h1>
+              <h1> MEMORY GAME</h1>
               <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
               <Restart/>
+              <div className="container">
+                <div className="row">
+                  {onePiece.map(character => (
+                    <Card 
+                      name= {character.name}
+                      image= {character.imageRecto}
+                      randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
+                    />
+                  ))}
+                </div>
+              </div>
+          
+              <button
+                onClick={this.togglePopupRules.bind(this)}
+                type="button"
+                className="btn btn-primary">Règles du jeu
+              </button>
+
+              {this.state.showPopup ? (
+                <Rules
+                closePopup={this.togglePopupRules.bind(this)} />
+              )
+              : ("")
+              }
+          
             </>
-          ) : (
-            <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
+        ) : (
+          <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
           )
         }
-        
-
       </>
       
     );
