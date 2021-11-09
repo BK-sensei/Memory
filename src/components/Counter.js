@@ -25,10 +25,10 @@ class Counter extends Component {
     render() {
         const {counterPlayer, counterComputer} = this.state
         return (
-            <div className="d-flex">
-                <div> Player {counterPlayer}</div>
-                <div> | </div>
-                <div> {counterComputer} Computer </div>
+            <div className="counter">
+                <div className="counterMargin"> Player <span className="marginScorePlayer"> {counterPlayer} </span></div>
+                <div className="counterMargin"> | </div>
+                <div className="counterMargin"> <span className="marginScoreComputer"> {counterComputer} </span> Computer </div>
             </div>
         );
     }

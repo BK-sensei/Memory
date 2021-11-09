@@ -8,3 +8,23 @@ h1{
   font-size: 50px;
   text-align: center;
 }
+
+.counter {
+  display: flex;
+  justify-content: center;
+}
+
+.counterMargin {
+  margin: 10px 10px;
+}
+
+.marginScorePlayer {
+  margin-left: 50px;
+}
+
+.marginScoreComputer {
+  margin-right: 50px;
+}
+
+
+
