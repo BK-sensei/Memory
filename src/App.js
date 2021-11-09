@@ -18,11 +18,15 @@ class App extends Component {
 
     // initial state data
     this.state = {
-      showPopup: false
+      showPopup: false,
+      counterPlayer : 0,
+      counterComputer : 0
     };
 
     // bindings
     this.togglePopupRules = this.togglePopupRules.bind(this);
+    this.handleCounterPlayer = this.handleCounterPlayer.bind(this);
+    this.handleCounterComputer = this.handleCounterComputer.bind(this);
   }
 
   // method rules popup
@@ -30,28 +34,15 @@ class App extends Component {
     this.setState({ showPopup: !this.state.showPopup });
   }
 
-  
-
-  constructor() {
-    super()
-
-    this.state = {
-        counterPlayer : 0,
-        counterComputer : 0
-    }
-    this.handleCounterPlayer = this.handleCounterPlayer.bind(this)
-    this.handleCounterComputer = this.handleCounterComputer.bind(this)
-  }
-
   handleCounterPlayer () {
     // if player win
     this.setState ({ counterPlayer : this.state.counterPlayer + 1})
-}
+  }
 
-handleCounterComputer () {
+  handleCounterComputer () {
     // if computer win
     this.setState ({ counterComputer : this.state.counterComputer + 1})
-}
+  }
 
 
   render() {
