@@ -22,7 +22,7 @@ class Card extends Component {
         console.log(this.props)
         const {isFlipped} = this.state
         return (
-            <div className="container-op col-3">
+            <div className="container-op col-2">
                 <div className={`card-op d-flex ${isFlipped ? "is-flipped" : "" } `} style={{transform: `rotate3d(0, 0, 1, ${this.props.randomRotate}deg)`}} onClick={this.handleCardClick}>
                     <div className="recto">
                         <div className="card card-front flip">
