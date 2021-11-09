@@ -1,0 +1,64 @@
+[{
+    "name" : "Luffy",
+    "imageRecto" : "luffy"
+}, {
+    "name" : "Zoro" ,
+    "imageRecto" : "zoro"
+},  {
+    "name" : "Sanji",
+    "imageRecto" : "sanji"
+},  {
+    "name" : "Usopp" ,
+    "imageRecto" : "usopp"
+}, {
+    "name" : "Nami",
+    "imageRecto" : "nami"
+}, {
+    "name" : "Brook",
+    "imageRecto" : "brook"
+},  {
+    "name" : "Nico Robin",
+    "imageRecto" : "nicoRobin"
+},  {
+    "name" : "Chopper",
+    "imageRecto" : "chopper"
+},  {
+    "name" : "Jinbei",
+    "imageRecto" : "jinbei"
+},  {
+    "name" : "Ace",
+    "imageRecto" : "ace"
+},  {
+    "name" : "Trafalgar Law",
+    "imageRecto" : "trafalgarLaw"
+},  {
+    "name" : "Barbe Blanche",
+    "imageRecto" : "barbeBlanche"
+},  {
+    "name" : "Barbe Noire",
+    "imageRecto" : "barbeNoire"
+},  {
+    "name" : "Baggy",
+    "imageRecto" : "baggy"
+},  {
+    "name" : "Hancock",
+    "imageRecto" : "hancock"
+},  {
+    "name" : "Shanks",
+    "imageRecto" : "shanks"
+},  {
+    "name" : "Dragon",
+    "imageRecto" : "dragon"
+},  {
+    "name" : "Aokiji",
+    "imageRecto" : "aokiji"
+}, {
+    "name" : "Smoker",
+    "imageRecto" : "smoker"
+}, {
+    "name" : "Franky",
+    "imageRecto" : "franky"
+}, {
+    "name" : "Gol D. Roger",
+    "imageRecto" : "golDRoger"
+}]
