@@ -27,5 +27,13 @@ h1{
   margin-right: 50px;
 }
 
+.Rbutton button {
+  color: white;
+  background-color: rgb(104, 178, 240);
+  border-radius: 30px;
+  border-color: white;
+  font-size: large;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
 
 
