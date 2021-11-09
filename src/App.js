@@ -35,6 +35,7 @@ handleCounterComputer () {
     
     return (
       <>
+      
         { result ? (
             <>
               <h1> MEMORY </h1>
