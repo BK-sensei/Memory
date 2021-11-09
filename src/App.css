@@ -10,8 +10,22 @@ h1{
   text-align: center;
 }
 
-/* CARD.JS */
-.backCard{
-  height: 100px;
-  width: 70px;
+.counter {
+  display: flex;
+  justify-content: center;
 }
+
+.counterMargin {
+  margin: 10px 10px;
+}
+
+.marginScorePlayer {
+  margin-left: 50px;
+}
+
+.marginScoreComputer {
+  margin-right: 50px;
+}
+
+
+
