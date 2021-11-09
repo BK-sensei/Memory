@@ -1,5 +1,6 @@
 import onePiece from './one-piece.json'
 import './App.css';
+import Restart from './components/Restart'
 import Counter from './components/Counter';
 import Victory from './components/Victory';
 
@@ -34,10 +35,12 @@ handleCounterComputer () {
     
     return (
       <>
+      
         { result ? (
             <>
               <h1> MEMORY </h1>
               <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
+              <Restart/>
             </>
           ) : (
             <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
@@ -50,5 +53,6 @@ handleCounterComputer () {
     );
   }
 }
+
 
 export default App;
