@@ -1,4 +1,4 @@
-
+import onePiece from './one-piece.json'
 import './App.css';
 import Card from './components/Card';
 
