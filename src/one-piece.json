@@ -1,64 +1,64 @@
 [{
     "name" : "Luffy",
-    "image-recto" : "luffy"
+    "imageRecto" : "luffy"
 }, {
     "name" : "Zorro" ,
-    "image-recto" : "zorro"
+    "imageRecto" : "zorro"
 },  {
     "name" : "Sanji",
-    "image-recto" : "sanji"
+    "imageRecto" : "sanji"
 },  {
     "name" : "Usopp" ,
-    "image-recto" : "usopp"
+    "imageRecto" : "usopp"
 }, {
     "name" : "Nami",
-    "image-recto" : "nami"
+    "imageRecto" : "nami"
 }, {
     "name" : "Brook",
-    "image-recto" : "brook"
+    "imageRecto" : "brook"
 },  {
     "name" : "Nico Robin",
-    "image-recto" : "nico robin"
+    "imageRecto" : "nico robin"
 },  {
     "name" : "Chopper",
-    "image-recto" : "chopper"
+    "imageRecto" : "chopper"
 },  {
     "name" : "Jinbei",
-    "image-recto" : "jinbei"
+    "imageRecto" : "jinbei"
 },  {
     "name" : "Ace",
-    "image-recto" : "ace"
+    "imageRecto" : "ace"
 },  {
     "name" : "Trafalgar Law",
-    "image-recto" : "trafalgar law"
+    "imageRecto" : "trafalgar law"
 },  {
     "name" : "Barbe Blanche",
-    "image-recto" : "barbe blanche"
+    "imageRecto" : "barbe blanche"
 },  {
     "name" : "Barbe Noire",
-    "image-recto" : "barbe noire"
+    "imageRecto" : "barbe noire"
 },  {
     "name" : "Baggy",
-    "image-recto" : "baggy"
+    "imageRecto" : "baggy"
 },  {
     "name" : "Hancock",
-    "image-recto" : "hancock"
+    "imageRecto" : "hancock"
 },  {
     "name" : "Shanks",
-    "image-recto" : "shanks"
+    "imageRecto" : "shanks"
 },  {
     "name" : "Dragon",
-    "image-recto" : "dragon"
+    "imageRecto" : "dragon"
 },  {
     "name" : "Aokiji",
-    "image-recto" : "aokiji"
+    "imageRecto" : "aokiji"
 }, {
     "name" : "Smoker",
-    "image-recto" : "smoker"
+    "imageRecto" : "smoker"
 }, {
     "name" : "Franky",
-    "image-recto" : "franky"
+    "imageRecto" : "franky"
 }, {
     "name" : "Gol D. Roger",
-    "image-recto" : "gol d. roger"
+    "imageRecto" : "gol d. roger"
 }]

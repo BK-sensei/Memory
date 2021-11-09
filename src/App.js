@@ -5,10 +5,24 @@ import Card from './components/Card';
 import React, { Component } from 'react';
 
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      characters: []
+    }
+  }
+
   render() {
+    console.log(onePiece);
     return (
       <div>
-        <Card />
+        {onePiece.map(character => (
+          <Card 
+            name= {character.name}
+            image= {character.imageRecto}
+          />
+        ))}
       </div>
     );
   }
