@@ -10,6 +10,7 @@ class App extends Component {
     console.log(onePiece);
     return (
       <div>
+        <h1>MEMORY GAME</h1>
         {onePiece.map(character => (
           <Card 
             name= {character.name}
