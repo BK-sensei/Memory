@@ -3,13 +3,15 @@
   src: url(/src/font/one-piece-font.ttf);
 }
 
-h1, h2 {
+
+h1{
   font-family: One Piece;
   font-size: 90px;
   text-align: center;
   color: #fff;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
 }
+
 
 p {
   text-align: center;
@@ -39,4 +41,36 @@ p {
 .box h2 {
   font-size: 60px;
   margin-bottom: 40px;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+}
+
+.counterMargin {
+  margin: 10px 10px;
+}
+
+.marginScorePlayer {
+  margin-left: 50px;
+}
+
+.marginScoreComputer {
+  margin-right: 50px;
+}
+
+.Rbutton button {
+  color: white;
+  background-color: rgb(104, 178, 240);
+  border-radius: 30px;
+  border-color: white;
+  font-size: large;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.Rbutton {
+  display: flex;
+  justify-content: center;
+margin-right: 20px;
 }
