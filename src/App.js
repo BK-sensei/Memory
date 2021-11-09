@@ -5,13 +5,6 @@ import Card from './components/Card';
 import React, { Component } from 'react';
 
 class App extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      characters: []
-    }
-  }
 
   render() {
     console.log(onePiece);
