@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import Rules from './components/Rules';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 class App extends Component {
 
   constructor () {
@@ -20,13 +21,19 @@ class App extends Component {
     this.state = {
       showPopup: false,
       counterPlayer : 0,
-      counterComputer : 0
+      counterComputer : 0,
+      firstCard: null,
+      secondCard: null,
+      cards : [...onePiece, ...onePiece],
+      isFlipped : false
     };
 
     // bindings
     this.togglePopupRules = this.togglePopupRules.bind(this);
     this.handleCounterPlayer = this.handleCounterPlayer.bind(this);
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
+    this.handleCardClick = this.handleCardClick.bind(this)
+    // this.handleCompareCards = this.handleCompareCards.bind(this)
   }
 
   // method rules popup
@@ -44,11 +51,24 @@ class App extends Component {
     this.setState ({ counterComputer : this.state.counterComputer + 1})
   }
 
+  handleCardClick(index) {
+    const {firstCard, secondCard, cards} = this.state
+    if (!firstCard) {
+      this.setState ({firstCard : cards[index], isFlipped : true })
+    } else if (!secondCard) {
+      this.setState ({secondCard : cards[index], isFlipped : true })
+    } if (firstCard.name !== secondCard.name && firstCard !== null && secondCard !== null) {
+      this.setState ({isFlipped : false})
+  }
+} 
+    
+
 
   render() {
-    const {counterPlayer, counterComputer} = this.state
+    const {counterPlayer, counterComputer, cards} = this.state
     const result = counterPlayer + counterComputer < 21
-    const cards = [...onePiece, ...onePiece]
+    // const shuffledCards = cards.sort((a,b) => 0.5 - Math.random())
+    
     return (
 
       <>
@@ -60,11 +80,15 @@ class App extends Component {
               <Restart/>
               <div className="container">
                 <div className="row">
-                  {cards.map(character => (
+                  {cards.map((character, index) => (
                     <Card 
                       name= {character.name}
                       image= {character.imageRecto}
                       randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
+                      onClick= {() => this.handleCardClick(index)}
+                      isFlipped={(this.state.firstCard && character.name === this.state.firstCard.name) 
+                        || (this.state.secondCard && character.name === this.state.secondCard.name)
+                      }
                     />
                   ))}
                 </div>
