@@ -22,7 +22,7 @@ class Card extends Component {
         console.log(this.props)
         const {isFlipped} = this.state
         return (
-            <div className="container-op col-3">
+            <div className="container-op col-2">
                 <div className={`card-op d-flex ${isFlipped ? "is-flipped" : "" } `} style={{transform: `rotate3d(0, 0, 1, ${this.props.randomRotate}deg)`}} onClick={this.handleCardClick}>
                     <div className="recto">
                         <div className="card card-front flip">
@@ -43,15 +43,3 @@ class Card extends Component {
 
 export default Card;
 
-{/* <div className="flip-container" onClick="this.classList.toggle('hover');">
-    <div className="flipper">
-    <div className="front">
-        <img src="../img-onepiece/op-back.png"/>
-    </div>
-    <div className="back">
-        <img src={`../img-onepiece/${this.props.image}.png`}/>
-        <h3 className="card-title text-center fw-bold">{this.props.name}</h3>
-    </div> 
-    </div>
-
-</div> */}

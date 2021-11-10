@@ -47,6 +47,8 @@ class App extends Component {
     const { counterPlayer, counterComputer } = this.state
     const result = counterPlayer + counterComputer < 21
 
+    const cards = [...onePiece, ...onePiece]
+
     return (
 
       <>
@@ -58,28 +60,24 @@ class App extends Component {
         </button>
 
 
-        {this.state.showPopup ? (
-          <Rules
-            closePopup={this.togglePopupRules.bind(this)} />
-        )
-          : (" ")}
-
-        {result ? (
-          <>
-            <h1> MEMORY GAME</h1>
-            <Counter counterPlayer={counterPlayer} counterComputer={counterComputer} />
-            <Restart />
-            <div className="container">
-              <div className="row">
-                {onePiece.map(character => (
-                  <Card
-                    name={character.name}
-                    image={character.imageRecto}
-                    randomRotate={Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
-                  />
-                ))}
+        {this.state.showPopup && <Rules closePopup={this.togglePopupRules.bind(this)} />}
+      
+        { result ? (
+            <>
+              <h1> MEMORY GAME</h1>
+              <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
+              <Restart/>
+              <div className="container">
+                <div className="row">
+                  {cards.map(character => (
+                    <Card 
+                      name= {character.name}
+                      image= {character.imageRecto}
+                      randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
           </>
         ) : (
           <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
