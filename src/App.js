@@ -17,7 +17,7 @@ class App extends Component {
   constructor () {
     super()
 
-    // initial state data
+    // Initial State
     this.state = {
       showPopup: false,
       counterPlayer : 0,
@@ -27,15 +27,17 @@ class App extends Component {
       cards : [...onePiece, ...onePiece],
     };
 
-    // bindings
+    // Binding des méthodes
     this.togglePopupRules = this.togglePopupRules.bind(this);
     this.handleCounterPlayer = this.handleCounterPlayer.bind(this);
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this)
+
+    // Shuffle = mélange les cartes
     const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
   }
   
-
+  // Définit un ordre des fonctions
   componentDidUpdate (prevProps, prevState) {
     if (!prevState.secondCard && this.state.secondCard){
       this.compare()
@@ -43,20 +45,23 @@ class App extends Component {
 
   }
 
-  // method rules popup
+  // Fonctions Rules Pop Up
   togglePopupRules() {
     this.setState({ showPopup: !this.state.showPopup });
   }
 
+  // Fonction qui compte les points du Joueur
   handleCounterPlayer () {
     this.setState ({ counterPlayer : this.state.counterPlayer + 1})
   }
 
+  // Fonction qui compte les points de l'ordinateur
   handleCounterComputer () {
     // if computer win
     this.setState ({ counterComputer : this.state.counterComputer + 1})
   }
 
+  // Fonction qui retourne deux cartes à l'aide d'un click
   handleCardClick(index) {
     const {firstCard, secondCard, cards} = this.state
     if (!firstCard) {
@@ -66,6 +71,7 @@ class App extends Component {
     }
   } 
 
+  // Fonction qui compare les deux cartes retournées
   compare () {
     if (this.state.firstCard.name === this.state.secondCard.name){
       
