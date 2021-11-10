@@ -49,6 +49,8 @@ class App extends Component {
     const {counterPlayer, counterComputer} = this.state
     const result = counterPlayer + counterComputer < 21
     const cards = [...onePiece, ...onePiece]
+    // Shuffle cards
+    const shuffledCards = cards.sort((a,b) => 0.5 - Math.random())
     return (
 
       <>
