@@ -158,12 +158,22 @@ class App extends Component {
     return (
 
       <>
-      
+        
         { result ? (
             <>
-              <h1> MEMORY GAME</h1>
+              <header className="d-flex justify-content-between align-items-center ms-5">
+                <Restart/>
+                <h1> MEMORY GAME</h1>
+                <button
+                  onClick={this.togglePopupRules}
+                  type="button"
+                  className="btn btn-primary my-5 mx-5">
+                    Règles du jeu
+                </button>
+                { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
+              </header>
+
               <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
-              <Restart/>
               <div className="container">
                 <div className="row">
                 {cards.map((card, index) => {
@@ -185,19 +195,6 @@ class App extends Component {
                   })}
                 </div>
               </div>
-          
-              <button
-                onClick={this.togglePopupRules.bind(this)}
-                type="button"
-                className="btn btn-primary">Règles du jeu
-              </button>
-
-              {this.state.showPopup ? (
-                <Rules
-                closePopup={this.togglePopupRules.bind(this)} />
-              )
-              : ("")
-              }
           
             </>
         ) : (
