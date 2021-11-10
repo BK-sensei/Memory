@@ -3,13 +3,17 @@
   src: url(/src/font/one-piece-font.ttf);
 }
 
+body{
+  background-image: url('../src/wood-bg.png');
+}
 
 h1 {
   font-family: One Piece;
-  font-size: 105px;
+  font-size: 100px;
   text-align: center;
-  color: rgb(0, 0, 0);
-  padding-bottom: 42.5px;
+  color: #fff;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  padding: 20px;
 }
 
 
@@ -56,6 +60,8 @@ p {
 .counter {
   display: flex;
   justify-content: center;
+  color: white;
+  font-weight: bold;
 }
 
 .counterMargin {

@@ -19,13 +19,18 @@
     background-color: #DEDDD4;
 }
 
-h3{
+.card-body{
+    background-color: #DEDDD4;
+}
+
+h4{
     font-family: One Piece;
     text-align: center;
     color: #935127;
     margin: 0px;
-    padding: 0;
+    padding: 0px;
 }
+
 .card-front, .card-back{
     width: 100px;
     height: 170.72px !important;
@@ -38,13 +43,16 @@ h3{
 /* FLIP CARDS */
 
 .container-op{
-    width: 100px;
+    width: 200px;
     height: 170.72px;
     perspective: 600px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .card-op {
-    width: 100%;
+    width: 100px;
     height: 100%;
     position: relative;
      /* transform: rotateY(0deg) !important; */
