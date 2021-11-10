@@ -54,13 +54,16 @@ class App extends Component {
   handleCardClick(index) {
     const {firstCard, secondCard, cards} = this.state
     if (!firstCard) {
-      this.setState ({firstCard : cards[index], isFlipped : true })
+      this.setState ({firstCard : cards[index]})
     } else if (!secondCard) {
-      this.setState ({secondCard : cards[index], isFlipped : true })
-    } if (firstCard.name !== secondCard.name && firstCard !== null && secondCard !== null) {
-      this.setState ({isFlipped : false})
+      this.setState ({secondCard : cards[index]})
+      this.compare()
+    }
+  } 
+
+  compare (card1, card2) {
+
   }
-} 
     
 
 
