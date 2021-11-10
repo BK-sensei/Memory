@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     const {counterPlayer, counterComputer} = this.state
     const result = counterPlayer + counterComputer < 21
-    
+    const cards = [...onePiece, ...onePiece]
     return (
 
       <>
@@ -60,7 +60,7 @@ class App extends Component {
               <Restart/>
               <div className="container">
                 <div className="row">
-                  {onePiece.map(character => (
+                  {cards.map(character => (
                     <Card 
                       name= {character.name}
                       image= {character.imageRecto}
