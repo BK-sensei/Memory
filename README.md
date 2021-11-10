@@ -13,7 +13,7 @@
 - Celui qui a une bonne mémoire se souviendra de l'emplacement des cartes déjà retournées et pourra les utiliser lorsqu'il en aura besoin pour compléter une paire.
 - Le gagnant est celui qui accumule le plus de paires.
 
-
+****
 **Fonctionnalités :**
 
 - Déroulement d’une partie : Les cartes sont toutes mélangées et sont posées côté verso dès le début du jeu. Le joueur commence la partie. La partie s’achève lorsque toutes les paires ont été trouvées. 
