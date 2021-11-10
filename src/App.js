@@ -25,6 +25,8 @@ class App extends Component {
       firstCard: null,
       secondCard: null,
       cards : [...onePiece, ...onePiece],
+      cardsClicked: [],
+      //--- theme: "onePiece"
     };
 
     // Binding des méthodes
@@ -73,12 +75,18 @@ class App extends Component {
   // Fonction qui compare les deux cartes retournées
   compare () {
     if (this.state.firstCard.name === this.state.secondCard.name){
-      setTimeout( () => {
+      const newArray = [...this.state.cardsClicked]
+      if (!newArray.some((e) => e.name === this.state.firstCard.name)) {
+        newArray.push(this.state.firstCard)
+      }
+      
+      setTimeout (()=> {
         this.setState ({
           firstCard : null,
-          secondCard : null
+          secondCard : null,
+          cardsClicked : newArray
         })
-      }, 2000)
+      },2000)
       this.handleCounterPlayer ()
     } else {
       setTimeout (()=> {
@@ -88,12 +96,11 @@ class App extends Component {
         })
       },2000)
     }
-  }
+  } 
     
 
-
   render() {
-    const {counterPlayer, counterComputer, cards} = this.state
+    const {counterPlayer, counterComputer, cards, cardsClicked} = this.state
     const result = counterPlayer + counterComputer < 21
     return (
 
@@ -106,18 +113,23 @@ class App extends Component {
               <Restart/>
               <div className="container">
                 <div className="row">
-                  {cards.map((character, index) => (
-                    <Card 
-                      name= {character.name}
-                      image= {character.imageRecto}
+                {cards.map((card, index) => {
+                    if (cardsClicked.some((e) => e.name === card.name)) {
+                      return <div className="container-op col-2">
+
+                      </div>
+                    }
+
+                    return <Card 
+                      name= {card.name}
+                      image= {card.imageRecto}
                       randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
                       onClick= {() => this.handleCardClick(index)}
                       isFlipped={(this.state.firstCard && index === this.state.firstCard.index) 
                         || (this.state.secondCard && index === this.state.secondCard.index)
                       }
-                      // style={(this.state.firstCard.name === this.state.secondCard.name) ? {} : {display: 'none'}}
                     />
-                  ))}
+                  })}
                 </div>
               </div>
           
