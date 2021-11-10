@@ -32,8 +32,9 @@ class App extends Component {
     this.handleCounterPlayer = this.handleCounterPlayer.bind(this);
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this)
-    // this.handleCompareCards = this.handleCompareCards.bind(this)
+    const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
   }
+  
 
   componentDidUpdate (prevProps, prevState) {
     if (!prevState.secondCard && this.state.secondCard){
@@ -48,7 +49,6 @@ class App extends Component {
   }
 
   handleCounterPlayer () {
-    // if player win
     this.setState ({ counterPlayer : this.state.counterPlayer + 1})
   }
 
@@ -68,7 +68,8 @@ class App extends Component {
 
   compare () {
     if (this.state.firstCard.name === this.state.secondCard.name){
-      console.log("trouvé")
+      
+      this.handleCounterPlayer ()
     } else {
       setTimeout (()=> {
         this.setState ({
@@ -84,8 +85,6 @@ class App extends Component {
   render() {
     const {counterPlayer, counterComputer, cards} = this.state
     const result = counterPlayer + counterComputer < 21
-    // const shuffledCards = cards.sort((a,b) => 0.5 - Math.random())
-    
     return (
 
       <>
