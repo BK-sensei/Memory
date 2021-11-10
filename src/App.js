@@ -120,7 +120,7 @@ class App extends Component {
   render() {
     const {counterPlayer, counterComputer, cards, cardsClicked} = this.state
     const result = counterPlayer + counterComputer < 21
-    console.log("yoyo", cardsClicked)
+    
     return (
 
       <>
