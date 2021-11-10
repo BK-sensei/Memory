@@ -115,7 +115,7 @@ class App extends Component {
                 <div className="row">
                 {cards.map((card, index) => {
                     if (cardsClicked.some((e) => e.name === card.name)) {
-                      return <div className="container-op col-2">
+                      return <div className="container-op col-1">
 
                       </div>
                     }
