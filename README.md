@@ -1,8 +1,8 @@
 ****
-#MEMORY GAME
+**MEMORY GAME
 ****
 
-###Définition des règles du jeu :
+**Définition des règles du jeu :
 
 - Joueur en 1 vs. 1 = joueur contre l’ordi
 - 21 paires = 42 cartes (apprentis + 1  paire formateurs)
@@ -14,7 +14,7 @@
 - Le gagnant est celui qui accumule le plus de paires.
 
 
-###Fonctionnalités :
+**Fonctionnalités :
 
 - Déroulement d’une partie : Les cartes sont toutes mélangées et sont posées côté verso dès le début du jeu. Le joueur commence la partie. La partie s’achève lorsque toutes les paires ont été trouvées. 
 - Score : Lorsqu’un joueur trouve une paire, il gagne 1 point. 
