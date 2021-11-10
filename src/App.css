@@ -50,6 +50,8 @@ p {
 .counter {
   display: flex;
   justify-content: center;
+  color: white;
+  font-weight: bold;
 }
 
 .counterMargin {
