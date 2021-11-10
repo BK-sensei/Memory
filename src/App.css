@@ -31,14 +31,17 @@ p {
   right: 50%;
   bottom: 50%;
   margin: auto;
-  -webkit-box-shadow: 0 35px 20px #777;
-  -moz-box-shadow: 0 35px 20px #777;
-  box-shadow: 0 35px 20px #777;
+  -webkit-box-shadow: 0 35px 20px rgba(119, 119, 119, 0.459);
+  -moz-box-shadow: 0 35px 20px rgba(119, 119, 119, 0.459);
+  box-shadow: 0 35px 20px rgba(119, 119, 119, 0.459);
   background-image: url(./img-onepiece/one-piece-bckg.jpg);
   background-size: cover;
 }
 
 .box h2 {
+  text-align: center;
+  color: #fff;
+  font-family: One Piece;
   font-size: 60px;
   margin-bottom: 40px;
 }

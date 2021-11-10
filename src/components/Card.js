@@ -43,7 +43,6 @@ class Card extends Component {
 
 export default Card;
 
-
 {/* <div className="flip-container" onClick="this.classList.toggle('hover');">
     <div className="flipper">
     <div className="front">
@@ -54,4 +53,5 @@ export default Card;
         <h3 className="card-title text-center fw-bold">{this.props.name}</h3>
     </div> 
     </div>
+
 </div> */}

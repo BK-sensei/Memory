@@ -1,15 +1,13 @@
 
+import React, { Component } from 'react';
 import onePiece from './one-piece.json'
-import './App.css';
 import Card from './components/Card';
-import "bootstrap/dist/css/bootstrap.min.css"
 import Restart from './components/Restart'
 import Counter from './components/Counter';
 import Victory from './components/Victory';
-
-import React, { Component } from 'react';
 import Rules from './components/Rules';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
 
@@ -19,8 +17,8 @@ class App extends Component {
     // initial state data
     this.state = {
       showPopup: false,
-      counterPlayer : 0,
-      counterComputer : 0
+      counterPlayer: 0,
+      counterComputer: 0
     };
 
     // bindings
@@ -34,63 +32,63 @@ class App extends Component {
     this.setState({ showPopup: !this.state.showPopup });
   }
 
-  handleCounterPlayer () {
+  handleCounterPlayer() {
     // if player win
-    this.setState ({ counterPlayer : this.state.counterPlayer + 1})
+    this.setState({ counterPlayer: this.state.counterPlayer + 1 })
   }
 
-  handleCounterComputer () {
+  handleCounterComputer() {
     // if computer win
-    this.setState ({ counterComputer : this.state.counterComputer + 1})
+    this.setState({ counterComputer: this.state.counterComputer + 1 })
   }
 
 
   render() {
-    const {counterPlayer, counterComputer} = this.state
+    const { counterPlayer, counterComputer } = this.state
     const result = counterPlayer + counterComputer < 21
-    
+
     return (
 
       <>
-      
-        { result ? (
-            <>
-              <h1> MEMORY GAME</h1>
-              <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
-              <Restart/>
-              <div className="container">
-                <div className="row">
-                  {onePiece.map(character => (
-                    <Card 
-                      name= {character.name}
-                      image= {character.imageRecto}
-                      randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
-                    />
-                  ))}
-                </div>
-              </div>
-          
-              <button
-                onClick={this.togglePopupRules.bind(this)}
-                type="button"
-                className="btn btn-primary">Règles du jeu
-              </button>
+        <button
+          onClick={this.togglePopupRules}
+          type="button"
+          className="btn btn-primary">
+            Règles du jeu
+        </button>
 
-              {this.state.showPopup ? (
-                <Rules
-                closePopup={this.togglePopupRules.bind(this)} />
-              )
-              : ("")
-              }
-          
-            </>
+
+        {this.state.showPopup ? (
+          <Rules
+            closePopup={this.togglePopupRules.bind(this)} />
+        )
+          : (" ")}
+
+        {result ? (
+          <>
+            <h1> MEMORY GAME</h1>
+            <Counter counterPlayer={counterPlayer} counterComputer={counterComputer} />
+            <Restart />
+            <div className="container">
+              <div className="row">
+                {onePiece.map(character => (
+                  <Card
+                    name={character.name}
+                    image={character.imageRecto}
+                    randomRotate={Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
+                  />
+                ))}
+              </div>
+            </div>
+          </>
         ) : (
           <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
-          )
+        )
+
         }
+
       </>
-      
-    );
+    )
   }
 }
 
