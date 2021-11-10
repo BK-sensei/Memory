@@ -42,7 +42,6 @@ class App extends Component {
     if (!prevState.secondCard && this.state.secondCard){
       this.compare()
     }
-
   }
 
   // Fonctions Rules Pop Up
@@ -74,7 +73,12 @@ class App extends Component {
   // Fonction qui compare les deux cartes retournées
   compare () {
     if (this.state.firstCard.name === this.state.secondCard.name){
-      
+      setTimeout( () => {
+        this.setState ({
+          // firstCard : visibility.hidden,
+          // secondCard :  visibility.hidden
+        })
+      }, 2000)
       this.handleCounterPlayer ()
     } else {
       setTimeout (()=> {
