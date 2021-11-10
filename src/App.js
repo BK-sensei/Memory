@@ -25,7 +25,6 @@ class App extends Component {
       firstCard: null,
       secondCard: null,
       cards : [...onePiece, ...onePiece],
-      isFlipped : false
     };
 
     // bindings
@@ -34,6 +33,13 @@ class App extends Component {
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this)
     // this.handleCompareCards = this.handleCompareCards.bind(this)
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (!prevState.secondCard && this.state.secondCard){
+      this.compare()
+    }
+
   }
 
   // method rules popup
@@ -54,15 +60,23 @@ class App extends Component {
   handleCardClick(index) {
     const {firstCard, secondCard, cards} = this.state
     if (!firstCard) {
-      this.setState ({firstCard : cards[index]})
+      this.setState ({firstCard : {...cards[index], index : index}})
     } else if (!secondCard) {
-      this.setState ({secondCard : cards[index]})
-      this.compare()
+      this.setState ({secondCard : {...cards[index], index : index}})
     }
   } 
 
-  compare (card1, card2) {
-
+  compare () {
+    if (this.state.firstCard.name === this.state.secondCard.name){
+      console.log("trouvé")
+    } else {
+      setTimeout (()=> {
+        this.setState ({
+          firstCard : null,
+          secondCard : null
+        })
+      },2000)
+    }
   }
     
 
@@ -89,8 +103,8 @@ class App extends Component {
                       image= {character.imageRecto}
                       randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
                       onClick= {() => this.handleCardClick(index)}
-                      isFlipped={(this.state.firstCard && character.name === this.state.firstCard.name) 
-                        || (this.state.secondCard && character.name === this.state.secondCard.name)
+                      isFlipped={(this.state.firstCard && index === this.state.firstCard.index) 
+                        || (this.state.secondCard && index === this.state.secondCard.index)
                       }
                     />
                   ))}
