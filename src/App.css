@@ -4,27 +4,28 @@
 }
 
 
-h1{
+h1 {
   font-family: One Piece;
-  font-size: 90px;
+  font-size: 105px;
   text-align: center;
-  color: #fff;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  color: rgb(0, 0, 0);
+  padding-bottom: 42.5px;
 }
 
 
 p {
   text-align: center;
-  font-weight: 300;
-  font-size: 32px;
-  color: #f6f1f1;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
 }
 
 .box {
-  border-radius: 20px;
+  z-index: -20;
+  border-radius: 12px;
   width: 1100px;
-  height: 630px;
+  height: 490px;
+  margin-bottom: 500px;
   padding: 50px;
   top: 50%;
   left: 0;
@@ -36,6 +37,12 @@ p {
   box-shadow: 0 35px 20px rgba(119, 119, 119, 0.459);
   background-image: url(./img-onepiece/one-piece-bckg.jpg);
   background-size: cover;
+}
+
+.box h1 {
+  font-size: 55px;
+  color: rgb(255, 255, 255);
+
 }
 
 .box h2 {

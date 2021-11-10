@@ -55,17 +55,17 @@ class App extends Component {
         <button
           onClick={this.togglePopupRules}
           type="button"
-          className="btn btn-primary">
+          className="btn btn-primary my-5 mx-5">
             Règles du jeu
         </button>
 
 
-        {this.state.showPopup && <Rules closePopup={this.togglePopupRules.bind(this)} />}
+        { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
       
         { result ? (
             <>
-              <h1> MEMORY GAME</h1>
-              <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
+              <h1>MEMORY GAME</h1>
+              <Counter counterPlayer={counterPlayer} counterComputer={counterComputer} />
               <Restart/>
               <div className="container">
                 <div className="row">
