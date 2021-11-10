@@ -3,13 +3,17 @@
   src: url(/src/font/one-piece-font.ttf);
 }
 
+body{
+  background-image: url('../src/bg-wood.png');
+}
 
 h1{
   font-family: One Piece;
-  font-size: 90px;
+  font-size: 100px;
   text-align: center;
   color: #fff;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  padding: 20px;
 }
 
 

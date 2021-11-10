@@ -115,6 +115,7 @@ class App extends Component {
                       isFlipped={(this.state.firstCard && index === this.state.firstCard.index) 
                         || (this.state.secondCard && index === this.state.secondCard.index)
                       }
+                      // style={(this.state.firstCard.name === this.state.secondCard.name) ? {} : {display: 'none'}}
                     />
                   ))}
                 </div>
