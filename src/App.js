@@ -75,8 +75,8 @@ class App extends Component {
     if (this.state.firstCard.name === this.state.secondCard.name){
       setTimeout( () => {
         this.setState ({
-          // firstCard : visibility.hidden,
-          // secondCard :  visibility.hidden
+          firstCard : null,
+          secondCard : null
         })
       }, 2000)
       this.handleCounterPlayer ()
