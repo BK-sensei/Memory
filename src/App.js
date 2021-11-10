@@ -42,6 +42,7 @@ class App extends Component {
     this.setState({ counterComputer: this.state.counterComputer + 1 })
   }
 
+  
 
   render() {
     const { counterPlayer, counterComputer } = this.state
