@@ -6,10 +6,10 @@ class Restart extends Component {
         return (
 
     <form>
-  <div className="Rbutton">
-    <button onClick="" value="Reset">Restart</button>
-  </div>
-</form>
+      <div className="Rbutton">
+        <button onClick="" value="Reset">Restart</button>
+      </div>
+    </form>
         
       );
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../victory-style.css'
 
 class Victory extends Component {
     
@@ -9,9 +10,24 @@ class Victory extends Component {
 
             <>
             {result ? (
-                        <h1> Vous avez gangé !!! </h1>
+                        <div className="relative">
+                            <div className="section"> 
+                                <div className="sect"> 
+                                    <h1> Vous avez gagné !!! </h1>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
                 ) : 
-                        <h1> Vous avez perdu !!!</h1>
+                    <div className="relative">
+                        <div className="section1"> 
+                            <div className="sect"> 
+                                <h1> Vous avez perdu !!! </h1>
+                            </div>
+                        </div>
+                        
+                    </div>
             } 
                 
             </>
@@ -19,4 +35,4 @@ class Victory extends Component {
     }
 }
 
-export default Victory;
+export default Victory; 
