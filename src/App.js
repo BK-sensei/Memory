@@ -17,6 +17,7 @@ class App extends Component {
 
     // Initial State
     this.state = {
+      // myTurn: false,
       showPopup: false,
       counterPlayer: 0,
       counterComputer: 0,
@@ -24,6 +25,8 @@ class App extends Component {
       secondCard: null,
       cards: [...onePiece, ...onePiece],
       cardsClicked: [],
+      disabled: false
+      // isDisable: false
       //--- theme: "onePiece"
     };
 
@@ -64,10 +67,13 @@ class App extends Component {
   handleCardClick(index) {
     const { firstCard, secondCard, cards } = this.state
     if (!firstCard) {
-      this.setState({ firstCard: { ...cards[index], index: index } })
+      this.setState({ firstCard: { ...cards[index], index: index }, isDisable: true })
     } else if (!secondCard) {
-      this.setState({ secondCard: { ...cards[index], index: index } })
+      this.setState({ secondCard: { ...cards[index], index: index }, isDisable: true })
     }
+    this.setState({
+      disabled: true,
+    });
   }
 
   // Fonction qui compare les deux cartes retournées
@@ -93,7 +99,7 @@ class App extends Component {
         })
       }, 2000)
       // Appeler la fonction IA
-      this.iA()
+      this.iA();
     }
   }
 
@@ -105,16 +111,15 @@ class App extends Component {
 
     let index1 = Math.floor(Math.random() * (max - min + 1) + min);
     let index2 = Math.floor(Math.random() * (max - min + 1) + min);
-    console.log('message card1', index1);
-    console.log('message card2', index2);
+    console.log('message card1 IA', index1);
+    console.log('message card2 IA', index2);
 
     // 2 J'utilise mes deux index pour récupérer les deux cartes dans le tableau de cards
     // créer deux variables chaque variables vont représenter un index de cards
     const card1 = this.state.cards[index1];
-    console.log('card1', card1);
-
+    console.log('card1 IA', card1);
     const card2 = this.state.cards[index2];
-    console.log('card1', card2);
+    console.log('card2 IA', card2);
 
     // 3 je stocker mes deux variables dans mes states 
     // inutile de cette faire cette action de setState({}) ! car l'ia n'a pas cliquer sur une carte lors de ses choix
@@ -175,6 +180,7 @@ class App extends Component {
                     </div>
                   }
                   return <Card
+                    disabled={this.state.disabled}
                     name={card.name}
                     image={card.imageRecto}
                     randomRotate={Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
@@ -182,6 +188,8 @@ class App extends Component {
                     isFlipped={(this.state.firstCard && index === this.state.firstCard.index)
                       || (this.state.secondCard && index === this.state.secondCard.index)
                     }
+
+                    
                   />
                 })}
               </div>
@@ -193,7 +201,7 @@ class App extends Component {
         )
         }
       </>
-    )
+    );
   }
 }
 

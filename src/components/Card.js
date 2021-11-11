@@ -5,17 +5,12 @@ import '../card-style.css'
 class Card extends Component {
     // constructor(){
     //     super()
-
     //     this.state = {
     //         isFlipped: false,
     //         flipCard : []
     //     }
-
     //     this.handleCardClick = this.handleCardClick.bind(this)
     // }
-
-    
-
     // handleTwoCardsFlip () {
     //    
     // }
@@ -25,9 +20,9 @@ class Card extends Component {
         // const {isFlipped} = this.state
         return (
             <div className="container-op col-1">
-                <div className={`card-op d-flex ${this.props.isFlipped ? "is-flipped" : "" } `} style={{transform: `rotate3d(0, 0, 1, ${this.props.randomRotate}deg)`}} onClick={this.props.onClick}>
+                <div className={`card-op d-flex ${this.props.isFlipped ? "is-flipped" : "" } `} style={{transform: `rotate3d(0, 0, 1, ${this.props.randomRotate}deg)` }} onClick={this.props.onClick}>
                     <div className="recto">
-                        <div className="card card-front flip">
+                        <div className="card card-front flip" style={{ pointerEvents: this.props.disabled ? 'none' : 'auto' }}>
                             <div style={{backgroundImage: `url('../op-image/${this.props.image}.png')`}} className="card-img-top characterCard" alt="One Piece Character"></div>
                             <div className="card-body">
                                 <h4 className="card-title text-center fw-bold">{this.props.name}</h4>

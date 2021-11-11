@@ -68,7 +68,7 @@ h4{
     backface-visibility: hidden;
 }
 
-.recto{
+.recto {
     position: absolute;
     top: 0;
     left: 0;
@@ -79,7 +79,7 @@ h4{
     transform: rotate3d(0, 1, 0, 180deg);
 }
 
-.verso{
+.verso {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,7 +88,7 @@ h4{
     z-index: 2;
 }
 
-.card-op .is-flipped {
+.card-op .is-flipped[disabled] {
     backface-visibility: hidden;
     position: absolute;
     width: 100%;
@@ -96,6 +96,7 @@ h4{
 }
   
 .is-flipped {
+    pointer-events: none;
     /* transform: rotateY(180deg) !important; */
     transform: rotate3d(0, 1, 0, 180deg) !important;
 }
