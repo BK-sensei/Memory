@@ -1,5 +1,7 @@
 
 import onePiece from './one-piece.json'
+import minions from './minions.json'
+import lotr from './lotr.json'
 import './App.css';
 import Card from './components/Card';
 import "bootstrap/dist/css/bootstrap.min.css"
