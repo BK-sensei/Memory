@@ -4,15 +4,15 @@ import '../card-style.css'
 
 class Card extends Component {
 
+
     render() {
 
         return (
             <div className="container-op col-1">
-                <div className={`card-op d-flex ${this.props.isFlipped ? "is-flipped" : "" } `} style={{transform: `rotate3d(0, 0, 1, ${this.props.randomRotate}deg)`}} onClick={this.props.onClick}>
+                <div className={`card-op d-flex ${this.props.isFlipped ? "is-flipped" : "" } `} style={{transform: `rotate3d(0, 0, 1, ${this.props.randomRotate}deg)` }} onClick={this.props.onClick}>
                     <div className="recto">
                         <div className="card card-front flip">
-                            <div style={{backgroundImage: `url('../card-img/${this.props.image}.png')`}} className="card-img-top characterCard" alt="One Piece Character"></div>
-                            <div class="card-body">
+
                                 <h4 className="card-title text-center fw-bold">{this.props.name}</h4>
                             </div>
                         </div>
@@ -27,5 +27,4 @@ class Card extends Component {
 }
 
 export default Card;
-
 

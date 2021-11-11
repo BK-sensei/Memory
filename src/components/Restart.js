@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Restart extends Component {
 
+
     render(){
         return (
 
@@ -13,7 +14,6 @@ class Restart extends Component {
         
       );
 }
-
 }
 
 export default Restart;
