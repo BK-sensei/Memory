@@ -160,7 +160,7 @@ class App extends Component {
               <button
                 onClick={this.togglePopupRules}
                 type="button"
-                className="btn btn-primary btn-lg" data-toggle="modal">
+                className="btn btn-primary btn-lg mx-3">
                 Règles du jeu
               </button>
               {this.state.showPopup && <Rules onClick={this.togglePopupRules} />}
