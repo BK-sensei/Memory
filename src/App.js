@@ -39,6 +39,7 @@ class App extends Component {
     this.handleCounterPlayer = this.handleCounterPlayer.bind(this);
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this)
+    this.handleSelectChange = this.handleSelectChange.bind(this)
 
     // Shuffle = mélange les cartes
     const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
@@ -159,6 +160,7 @@ class App extends Component {
 
   handleSelectChange(e) {
     const value = e.target.value
+    console.log(value)
 
     if (value === "onePiece") {
       this.setState({
@@ -188,15 +190,15 @@ class App extends Component {
         
         { result ? (
             <>
-              <header className="d-flex justify-content-between align-items-center ms-5">
+              <header className="d-flex justify-content-between align-items-center">
                 <Restart/>
                 <h1> MEMORY GAME</h1>
                 <div className="d-flex align-items-center">
-                  <Theme onChange={this.handleSelectChange}/>
+                  <Theme onClick={this.handleSelectChange}/>
                   <button
                     onClick={this.togglePopupRules}
                     type="button"
-                    className="btn btn-primary my-5 mx-5">
+                    className="btn btn-primary">
                       Règles du jeu
                   </button>
                   { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
