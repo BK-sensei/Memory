@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Restart from './Restart';
 import '../victory-style.css'
 
 class Victory extends Component {
@@ -16,7 +17,7 @@ class Victory extends Component {
                                     <h1> Vous avez gagné !!! </h1>
                                 </div>
                             </div>
-                            
+                            <Restart />
                         </div>
                         
                 ) : 
@@ -26,7 +27,7 @@ class Victory extends Component {
                                 <h1> Vous avez perdu !!! </h1>
                             </div>
                         </div>
-                        
+                        <Restart />
                     </div>
             } 
                 
