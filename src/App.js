@@ -25,9 +25,6 @@ class App extends Component {
       secondCard: null,
       cards: [...onePiece, ...onePiece],
       cardsClicked: [],
-      disabled: false
-      // isDisable: false
-      //--- theme: "onePiece"
     };
 
     // Binding des méthodes
@@ -141,10 +138,10 @@ class App extends Component {
       this.iA();
     }
 
-    // je renisialise les state a null // INUTILE POUR CETTE ACTION
+    // je reniTialise les state a null // INUTILE POUR CETTE ACTION
     // l'ia continue a jouer
     // sinon c'est le tour de sevrain
-    // je renisialise les sate a null
+    // je renitialise les states a null
   }
 
   // Fonction qui compare les deux cartes retournées
@@ -157,7 +154,7 @@ class App extends Component {
     const result = counterPlayer + counterComputer < 12
     return (
       <>
-        {result ? (
+        { result ? (
           <>
             <header className="d-flex justify-content-between align-items-center ms-5">
               <Restart />
@@ -188,13 +185,10 @@ class App extends Component {
                     isFlipped={(this.state.firstCard && index === this.state.firstCard.index)
                       || (this.state.secondCard && index === this.state.secondCard.index)
                     }
-
-                    
                   />
                 })}
               </div>
             </div>
-
           </>
         ) : (
           <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
