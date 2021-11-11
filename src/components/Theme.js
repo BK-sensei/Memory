@@ -6,9 +6,9 @@ class Theme extends Component {
         return (
             <>
                 <select className="form-select">
-                    <option onChange={this.props.onChange} value="onePiece">One Piece</option>
-                    <option onChange={this.props.onChange} value="lotr">Lord of The Ring</option>
-                    <option onChange={this.props.onChange} value="minions">Minions</option>
+                    <option onSelect={this.props.onChange} value="onePiece">One Piece</option>
+                    <option onSelect={this.props.onChange} value="lotr">Lord of The Rings</option>
+                    <option onSelect={this.props.onChange} value="minions">Minions</option>
                 </select>
             </>
         );
