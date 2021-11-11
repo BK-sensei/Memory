@@ -29,7 +29,7 @@ class Card extends Component {
                     <div className="recto">
                         <div className="card card-front flip">
                             <div style={{backgroundImage: `url('../op-image/${this.props.image}.png')`}} className="card-img-top characterCard" alt="One Piece Character"></div>
-                            <div class="card-body">
+                            <div className="card-body">
                                 <h4 className="card-title text-center fw-bold">{this.props.name}</h4>
                             </div>
                         </div>
