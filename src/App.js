@@ -26,8 +26,6 @@ class App extends Component {
       secondCard: null,
       cards : [...onePiece, ...onePiece],
       cardsClicked: [],
-      card1: null,
-      card2: null
       //--- theme: "onePiece"
     };
 
@@ -121,10 +119,7 @@ class App extends Component {
     // 2 J'UTILISE MES INDEX POUR RECUPERER LES Deux CARTES DANS LE TABLEAUU CARDS
     // créer deux variables chaque variables vont représenter un index de cards
 
-    this.setState ({ 
-      card1 : this.state.cards[index1],
-      card2 : this.state.cards[index2]
-    })
+   
       
       const card1 = this.state.cards[index1];
     console.log('card1', card1);
@@ -164,7 +159,7 @@ class App extends Component {
     
 
   render() {
-    const {counterPlayer, counterComputer, cards, cardsClicked, card1, card2} = this.state
+    const {counterPlayer, counterComputer, cards, cardsClicked} = this.state
     const result = counterPlayer + counterComputer < 3
     return (
 
