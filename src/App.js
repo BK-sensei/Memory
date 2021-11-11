@@ -26,6 +26,8 @@ class App extends Component {
       secondCard: null,
       cards : [...onePiece, ...onePiece],
       cardsClicked: [],
+      card1: null,
+      card2: null
       //--- theme: "onePiece"
     };
 
@@ -37,6 +39,7 @@ class App extends Component {
 
     // Shuffle = mélange les cartes
     const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
+    
   }
   
   // Définit un ordre des fonctions
@@ -112,17 +115,22 @@ class App extends Component {
     
     let index1 = Math.floor(Math.random() * (max - min + 1) + min);
     let index2 = Math.floor(Math.random() * (max - min + 1) + min);
-    console.log('message', index1);
-    console.log('message', index2);
+    // console.log('message', index1);
+    // console.log('message', index2);
 
     // 2 J'UTILISE MES INDEX POUR RECUPERER LES Deux CARTES DANS LE TABLEAUU CARDS
     // créer deux variables chaque variables vont représenter un index de cards
 
-    const card1 = this.state.cards[index1];
+    this.setState ({ 
+      card1 : this.state.cards[index1],
+      card2 : this.state.cards[index2]
+    })
+      
+      const card1 = this.state.cards[index1];
     console.log('card1', card1);
 
     const card2 = this.state.cards[index2];
-    console.log('card1', card2);
+    console.log('card2', card2);
 
     // 3 je les stoker dans mes state inutile pour cette action
     // this.setState({ 
@@ -138,6 +146,8 @@ class App extends Component {
       if(card1.name === card2.name) {
         this.handleCounterComputer()
         this.iA();
+      } else {
+        this.handleCardClick()
       }
 
     // Si les cartes sont identique 
@@ -154,7 +164,7 @@ class App extends Component {
     
 
   render() {
-    const {counterPlayer, counterComputer, cards, cardsClicked} = this.state
+    const {counterPlayer, counterComputer, cards, cardsClicked, card1, card2} = this.state
     const result = counterPlayer + counterComputer < 3
     return (
 
@@ -182,9 +192,8 @@ class App extends Component {
                       return <div className="container-op col-1">
 
                       </div>
-                    }
-
-                    return <Card 
+                    } 
+                      return <Card 
                       name= {card.name}
                       image= {card.imageRecto}
                       randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
@@ -193,6 +202,9 @@ class App extends Component {
                         || (this.state.secondCard && index === this.state.secondCard.index)
                       }
                     />
+                    
+
+                    
                   })}
                 </div>
               </div>

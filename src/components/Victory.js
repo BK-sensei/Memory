@@ -9,17 +9,24 @@ class Victory extends Component {
 
             <>
             {result ? (
-                        <>
+                        <div className="relative">
                             <div className="section"> 
                                 <div className="sect"> 
                                     <h1> Vous avez gagné !!! </h1>
                                 </div>
                             </div>
                             
-                        </>
+                        </div>
                         
                 ) : 
-                        <h1> Vous avez perdu !!!</h1>
+                    <div className="relative">
+                        <div className="section1"> 
+                            <div className="sect"> 
+                                <h1> Vous avez perdu !!! </h1>
+                            </div>
+                        </div>
+                        
+                    </div>
             } 
                 
             </>
