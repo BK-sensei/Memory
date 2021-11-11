@@ -1,10 +1,19 @@
 
 import React, { Component } from 'react';
 import onePiece from './one-piece.json'
+
+import minions from './minions.json'
+import lotr from './lotr.json'
+
+import './App.css';
+
 import Card from './components/Card';
-import Restart from './components/Restart'
+import Restart from './components/Restart';
 import Counter from './components/Counter';
 import Victory from './components/Victory';
+import Theme from './components/Theme';
+
+import React, { Component } from 'react';
 import Rules from './components/Rules';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +34,7 @@ class App extends Component {
       secondCard: null,
       cards: [...onePiece, ...onePiece],
       cardsClicked: [],
+
     };
 
     // Binding des méthodes
@@ -32,6 +42,7 @@ class App extends Component {
     this.handleCounterPlayer = this.handleCounterPlayer.bind(this);
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this)
+    this.handleSelectChange = this.handleSelectChange.bind(this)
 
     // Shuffle = mélange les cartes
     // const shuffledCards = this.state.cards.sort((a, b) => 0.5 - Math.random());
@@ -149,44 +160,74 @@ class App extends Component {
   // sinon c'est le tour de l'Ia
 
 
+
+  handleSelectChange(e) {
+    const value = e.target.value
+
+    if (value === "onePiece") {
+      this.setState({
+        theme: value,
+        cards: [...onePiece, ...onePiece]
+      })
+    } else if (value === "lotr") {
+      this.setState({
+        theme: value,
+        cards: [...lotr, ...lotr]
+      })
+    } else if (value === "minions") {
+      this.setState({
+        theme: value,
+        cards: [...minions, ...minions]
+      })
+    }
+  }
+    
+
   render() {
     const { counterPlayer, counterComputer, cards, cardsClicked } = this.state
     const result = counterPlayer + counterComputer < 12
     return (
       <>
         { result ? (
-          <>
-            <header className="d-flex justify-content-between align-items-center ms-5">
-              <Restart />
-              <h1> MEMORY GAME</h1>
-              <button
-                onClick={this.togglePopupRules}
-                type="button"
-                className="btn btn-primary btn-lg mx-3">
-                Règles du jeu
-              </button>
-              {this.state.showPopup && <Rules onClick={this.togglePopupRules} />}
-            </header>
-            <Counter counterPlayer={counterPlayer} counterComputer={counterComputer} />
-            <div className="container">
-              <div className="row">
-                {cards.map((card, index, item) => {
-                  if (cardsClicked.some((e) => e.name === card.name)) {
-                    return <div key={item} className="container-op col-1">
 
-                    </div>
-                  }
-                  return <Card
-                    disabled={this.state.disabled}
-                    name={card.name}
-                    image={card.imageRecto}
-                    randomRotate={Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
-                    onClick={() => this.handleCardClick(index)}
-                    isFlipped={(this.state.firstCard && index === this.state.firstCard.index)
-                      || (this.state.secondCard && index === this.state.secondCard.index)
+            <>
+              <header className="d-flex justify-content-between align-items-center">
+                <Restart/>
+                <h1> MEMORY GAME</h1>
+                <div className="d-flex align-items-center">
+                  <Theme onClick={this.handleSelectChange}/>
+                  <button
+                    onClick={this.togglePopupRules}
+                    type="button"
+                    className="btn btn-primary">
+                      Règles du jeu
+                  </button>
+                  { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
+                  </div>
+              </header>
+
+              <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
+              <div className="container">
+                <div className="row">
+                {cards.map((card, index) => {
+                    if (cardsClicked.some((e) => e.name === card.name)) {
+                      return <div className="container-op col-1">
+
+                      </div>
                     }
-                  />
-                })}
+
+                    return <Card 
+                      name= {card.name}
+                      image= {card.imageRecto}
+                      backCard= {card.back} 
+                      randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
+                      onClick= {() => this.handleCardClick(index)}
+                      isFlipped={(this.state.firstCard && index === this.state.firstCard.index) 
+                        || (this.state.secondCard && index === this.state.secondCard.index)
+                      }
+                    />
+                  })}
+                </div>
               </div>
             </div>
           </>

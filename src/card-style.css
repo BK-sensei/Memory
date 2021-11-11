@@ -1,7 +1,7 @@
 /* CARD.JS */
 
 .characterCard {
-    width: 100px;
+    width: 100%;
     height: 250px;
     background-position: top;
     background-repeat: no-repeat;
@@ -21,6 +21,7 @@
 
 .card-body{
     background-color: #DEDDD4;
+    border-radius: 10px;
 }
 
 h4{
@@ -43,12 +44,13 @@ h4{
 /* FLIP CARDS */
 
 .container-op{
-    width: 200px;
+    width: 110px;
     height: 170.72px;
     perspective: 600px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .card-op {
@@ -59,6 +61,7 @@ h4{
     transform: rotate3d(0, 1, 0, 0deg);
     transition: transform 1s;
     transform-style: preserve-3d;
+    border-radius: 10px;
 }
 
 .flip {

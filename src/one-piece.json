@@ -1,37 +1,49 @@
 [{
     "name" : "Luffy",
-    "imageRecto" : "luffy"
+    "imageRecto" : "luffy",
+    "back" : "onePiece"
 }, {
     "name" : "Zoro" ,
-    "imageRecto" : "zoro"
+    "imageRecto" : "zoro",
+    "back" : "onePiece"
 },  {
     "name" : "Sanji",
-    "imageRecto" : "sanji"
+    "imageRecto" : "sanji",
+    "back" : "onePiece"
 },  {
     "name" : "Usopp" ,
-    "imageRecto" : "usopp"
+    "imageRecto" : "usopp",
+    "back" : "onePiece"
 }, {
     "name" : "Nico Robin",
-    "imageRecto" : "nicoRobin"
+    "imageRecto" : "nicoRobin",
+    "back" : "onePiece"
 },  {
     "name" : "Chopper",
-    "imageRecto" : "chopper"
+    "imageRecto" : "chopper",
+    "back" : "onePiece"
 },  {
     "name" : "Ace",
-    "imageRecto" : "ace"
+    "imageRecto" : "ace",
+    "back" : "onePiece"
 },  {
     "name" : "Barbe Blanche",
-    "imageRecto" : "barbeBlanche"
+    "imageRecto" : "barbeBlanche",
+    "back" : "onePiece"
 },  {
     "name" : "Barbe Noire",
-    "imageRecto" : "barbeNoire"
+    "imageRecto" : "barbeNoire",
+    "back" : "onePiece"
 },  {
     "name" : "Baggy",
-    "imageRecto" : "baggy"
+    "imageRecto" : "baggy",
+    "back" : "onePiece"
 },  {
     "name" : "Shanks",
-    "imageRecto" : "shanks"
+    "imageRecto" : "shanks",
+    "back" : "onePiece"
 }, {
     "name" : "Gol D. Roger",
-    "imageRecto" : "golDRoger"
+    "imageRecto" : "golDRoger",
+    "back" : "onePiece"
 }]
