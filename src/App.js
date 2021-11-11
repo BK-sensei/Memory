@@ -25,8 +25,8 @@ class App extends Component {
       firstCard: null,
       secondCard: null,
       cards : [...onePiece, ...onePiece],
-      cardsClicked: [],
-      //--- theme: "onePiece"
+      cardsClicked : [],
+      // theme: "onePiece"
     };
 
     // Binding des méthodes
@@ -100,42 +100,23 @@ class App extends Component {
       // Appeler la fonction IA
       this.iA()
     }
-  } 
+  }
 
-  // Fonction pour que l'ordinateur joue 
-  iA() {
+  // handleSelectChange(e) {
+  //   const value = e.target.value
 
-    // Genérer deux chiffres aléatoires qui vont correspondre aux index des cartes
-
-    // Je génère deux chiffres aléatoires
-    let min = 0;
-    let max = this.state.cards.length - 1;
-    
-    let index1 = Math.floor(Math.random() * (max - min + 1) + min);
-    let index2 = Math.floor(Math.random() * (max - min + 1) + min);
-    // console.log('message', index1);
-    // console.log('message', index2);
-
-    // 2 J'UTILISE MES INDEX POUR RECUPERER LES Deux CARTES DANS LE TABLEAUU CARDS
-    // créer deux variables chaque variables vont représenter un index de cards
-
-   
-      
-      const card1 = this.state.cards[index1];
-    console.log('card1', card1);
-
-    const card2 = this.state.cards[index2];
-    console.log('card2', card2);
-
-    // 3 je les stoker dans mes state inutile pour cette action
-    // this.setState({ 
-    //   firstCard: {
-    //     ...card1, index: index1
-    //   },
-    //   secondCard: {
-    //     ...card2, index: index2
-    //   },
-    //  })
+  //   if (value === "onePiece") {
+  //     this.setState({
+  //       theme: value,
+  //       cards: [...onePiece, ...onePiece]
+  //     })
+  //   } else if (value === "lotr") {
+  //     this.setState({
+  //       theme: value,
+  //       cards: [...lotr, ...lotr]
+  //     })
+  //   }
+  // }
     
      // 4 je compare mes deux cartes qui sont stoker dans le state 
       if(card1.name === card2.name) {
@@ -160,35 +141,27 @@ class App extends Component {
 
   render() {
     const {counterPlayer, counterComputer, cards, cardsClicked} = this.state
-    const result = counterPlayer + counterComputer < 3
+    const result = counterPlayer + counterComputer < 21
+    
     return (
 
       <>
         
         { result ? (
             <>
-              <header className="d-flex justify-content-between align-items-center ms-5">
-                <Restart/>
-                <h1> MEMORY GAME</h1>
-                <button
-                  onClick={this.togglePopupRules}
-                  type="button"
-                  className="btn btn-primary my-5 mx-5">
-                    Règles du jeu
-                </button>
-                { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
-              </header>
-
+              {/* select onchange */}
+              <h1> MEMORY GAME</h1>
               <Counter counterPlayer={counterPlayer} counterComputer={counterComputer}/>
               <div className="container">
                 <div className="row">
-                {cards.map((card, index) => {
+                  {cards.map((card, index) => {
                     if (cardsClicked.some((e) => e.name === card.name)) {
-                      return <div className="container-op col-1">
-
+                      return <div className="container-op col-2">
+                        
                       </div>
-                    } 
-                      return <Card 
+                    }
+                    
+                    return <Card 
                       name= {card.name}
                       image= {card.imageRecto}
                       randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
@@ -197,9 +170,6 @@ class App extends Component {
                         || (this.state.secondCard && index === this.state.secondCard.index)
                       }
                     />
-                    
-
-                    
                   })}
                 </div>
               </div>
