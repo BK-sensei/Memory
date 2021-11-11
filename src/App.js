@@ -30,7 +30,7 @@ handleCounterComputer () {
 
   render() {
     const {counterPlayer, counterComputer} = this.state
-    const result = counterPlayer + counterComputer < 21
+    const result = counterPlayer + counterComputer < 3
     
     return (
       <>

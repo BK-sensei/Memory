@@ -29,3 +29,16 @@ h1{
 
 
 
+.section {
+  height: 500px;
+  background-image: url(/src/Roi\ des\ pirates.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.sect {
+  background-color:white;
+  opacity: 0.8;
+  height: 500px;
+  position: relative;
+}
