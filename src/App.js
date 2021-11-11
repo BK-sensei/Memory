@@ -186,6 +186,7 @@ class App extends Component {
                     return <Card 
                       name= {card.name}
                       image= {card.imageRecto}
+                      backCard= {card.back} 
                       randomRotate= {Math.floor(Math.random() * (20 - (-20) + 1) + (-20))}
                       onClick= {() => this.handleCardClick(index)}
                       isFlipped={(this.state.firstCard && index === this.state.firstCard.index) 

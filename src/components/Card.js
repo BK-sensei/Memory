@@ -18,7 +18,7 @@ class Card extends Component {
                         </div>
                     </div>
                     <div className="verso flip">
-                        <div style={{backgroundImage: `url('../card-img/op-back.png')`}} className="card-img-top img-fluid card-back" alt="Back Card"></div>
+                        <div style={{backgroundImage: `url('../card-back/${this.props.backCard}.png')`}} className="card-img-top img-fluid card-back" alt="Back Card"></div>
                     </div>
                 </div>
             </div>

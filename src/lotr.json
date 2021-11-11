@@ -1,37 +1,49 @@
 [{
     "name" : "Aragorn",
-    "imageRecto" : "aragorn"
+    "imageRecto" : "aragorn",
+    "back" : "lotr"
 }, {
-    "name" : "Arwen" ,
-    "imageRecto" : "arwen"
+    "name" : "Arwen",
+    "imageRecto" : "arwen",
+    "back" : "lotr"
 },  {
     "name" : "Eomer",
-    "imageRecto" : "eomer"
+    "imageRecto" : "eomer",
+    "back" : "lotr"
 },  {
     "name" : "Frodon" ,
-    "imageRecto" : "frodon"
+    "imageRecto" : "frodon",
+    "back" : "lotr"
 }, {
     "name" : "Gandalf",
-    "imageRecto" : "gandalf"
+    "imageRecto" : "gandalf",
+    "back" : "lotr"
 },  {
     "name" : "Gimli",
-    "imageRecto" : "gimli"
+    "imageRecto" : "gimli",
+    "back" : "lotr"
 },  {
     "name" : "Gollum",
-    "imageRecto" : "gollum"
+    "imageRecto" : "gollum",
+    "back" : "lotr"
 },  {
     "name" : "Legolas",
-    "imageRecto" : "legolas"
+    "imageRecto" : "legolas",
+    "back" : "lotr"
 },  {
     "name" : "Saruman",
-    "imageRecto" : "saruman"
+    "imageRecto" : "saruman",
+    "back" : "lotr"
 },  {
     "name" : "Sauron",
-    "imageRecto" : "sauron"
+    "imageRecto" : "sauron",
+    "back" : "lotr"
 },  {
     "name" : "Galadriel",
-    "imageRecto" : "galadriel"
+    "imageRecto" : "galadriel",
+    "back" : "lotr"
 }, {
     "name" : "Sam",
-    "imageRecto" : "sam"
+    "imageRecto" : "sam",
+    "back" : "lotr"
 }]
