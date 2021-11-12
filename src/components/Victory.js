@@ -15,10 +15,11 @@ class Victory extends Component {
                             <div className="section"> 
                                 <div className="sect"> 
                                     <h1> Vous avez gagné !!! </h1>
-                                    <Restart />
+                                    <Restart className="play"/>
                                 </div>
                             </div>
                         </div>
+
                         
                 ) : 
                     <div className="relative">

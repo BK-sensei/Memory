@@ -41,3 +41,8 @@
   font-weight: 900;
   color: black;
 } 
+
+.play{
+  z-index: 111;
+  bottom: 10px;
+}
