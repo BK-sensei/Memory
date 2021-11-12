@@ -1,20 +1,17 @@
+import React, { Component } from 'react';
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import onePiece from './one-piece.json'
 import minions from './minions.json'
 import lotr from './lotr.json'
-
-import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import Card from './components/Card';
 import Restart from './components/Restart';
 import Counter from './components/Counter';
 import Victory from './components/Victory';
 import Theme from './components/Theme';
-
-import React, { Component } from 'react';
 import Rules from './components/Rules';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
@@ -41,12 +38,14 @@ class App extends Component {
     this.handleCounterComputer = this.handleCounterComputer.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this)
     this.handleSelectChange = this.handleSelectChange.bind(this)
+    this.compare = this.compare.bind(this)
+    this.iA = this.iA.bind(this)
 
     // Shuffle = mélange les cartes
     const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
   }
   
-  // Définit un ordre des fonctions
+  //--- Définit un ordre des fonctions
   componentDidUpdate (prevProps, prevState) {
     if (!prevState.secondCard && this.state.secondCard){
       this.compare()
@@ -57,23 +56,23 @@ class App extends Component {
     }
   }
 
-  // Fonctions Rules Pop Up
+  //--- Fonctions Rules Pop Up
   togglePopupRules() {
     this.setState({ showPopup: !this.state.showPopup });
   }
 
-  // Fonction qui compte les points du Joueur
+  //--- Fonction qui compte les points du Joueur
   handleCounterPlayer () {
     this.setState ({ counterPlayer : this.state.counterPlayer + 1})
   }
 
-  // Fonction qui compte les points de l'ordinateur
+  //--- Fonction qui compte les points de l'ordinateur
   handleCounterComputer () {
     // if computer win
     this.setState ({ counterComputer : this.state.counterComputer + 1})
   }
 
-  // Fonction qui retourne deux cartes à l'aide d'un click
+  //--- Fonction qui retourne deux cartes à l'aide d'un click
   handleCardClick(index) {
     const {firstCard, secondCard, cards} = this.state
 
@@ -84,7 +83,7 @@ class App extends Component {
     }
   } 
 
-  // Fonction qui compare les deux cartes retournées
+  //--- Fonction qui compare les deux cartes retournées
   compare () {
     const { amIPlaying } = this.state
 
@@ -126,7 +125,7 @@ class App extends Component {
     }
   } 
 
-  // Fonction pour que l'ordinateur joue 
+  //--- Fonction pour que l'ordinateur joue 
   iA() {
 
     // Genérer deux chiffres aléatoires qui vont correspondre aux index des cartes
@@ -178,6 +177,7 @@ class App extends Component {
   // sinon c'est le tour de l'Ia
 
 
+  //--- Fonction pour changer de thème lorsque l'on joue
   handleSelectChange(e) {
     const value = e.target.value
 
