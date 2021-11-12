@@ -31,7 +31,8 @@ class App extends Component {
       secondCard: null,
       cards : [...onePiece, ...onePiece],
       cardsClicked: [],
-      theme: "onePiece"
+      theme: "onePiece",
+      amIPlaying: true
     };
 
     // Binding des méthodes
@@ -49,6 +50,10 @@ class App extends Component {
   componentDidUpdate (prevProps, prevState) {
     if (!prevState.secondCard && this.state.secondCard){
       this.compare()
+    }
+
+    if (prevState.amIPlaying && !this.state.amIPlaying){
+      this.iA()
     }
   }
 
@@ -71,6 +76,7 @@ class App extends Component {
   // Fonction qui retourne deux cartes à l'aide d'un click
   handleCardClick(index) {
     const {firstCard, secondCard, cards} = this.state
+
     if (!firstCard) {
       this.setState ({firstCard : {...cards[index], index : index}})
     } else if (!secondCard) {
@@ -80,6 +86,8 @@ class App extends Component {
 
   // Fonction qui compare les deux cartes retournées
   compare () {
+    const { amIPlaying } = this.state
+
     if (this.state.firstCard.name === this.state.secondCard.name){
       const newArray = [...this.state.cardsClicked]
       if (!newArray.some((e) => e.name === this.state.firstCard.name)) {
@@ -90,19 +98,31 @@ class App extends Component {
         this.setState ({
           firstCard : null,
           secondCard : null,
-          cardsClicked : newArray
+          cardsClicked : newArray,
+          amIPlaying: !this.state.amIPlaying
         })
+
+        if (amIPlaying){
+          this.handleCounterPlayer()
+        }else {
+          this.handleCounterComputer()
+        }
+
       },2000)
-      this.handleCounterPlayer ()
+
+      // if (this.state.amIPlaying === true){
+      //   amIPlaying === false
+      // }
+
     } else {
       setTimeout (()=> {
         this.setState ({
           firstCard : null,
-          secondCard : null
+          secondCard : null,
+          amIPlaying: !this.state.amIPlaying
         })
       },2000)
       // Appeler la fonction IA
-      this.iA()
     }
   } 
 
@@ -119,7 +139,7 @@ class App extends Component {
     let index2 = Math.floor(Math.random() * (max - min + 1) + min);
     console.log('message', index1);
     console.log('message', index2);
-
+    
     // 2 J'UTILISE MES INDEX POUR RECUPERER LES Deux CARTES DANS LE TABLEAUU CARDS
     // créer deux variables chaque variables vont représenter un index de cards
 
@@ -130,20 +150,20 @@ class App extends Component {
     console.log('card1', card2);
 
     // 3 je les stoker dans mes state inutile pour cette action
-    // this.setState({ 
-    //   firstCard: {
-    //     ...card1, index: index1
-    //   },
-    //   secondCard: {
-    //     ...card2, index: index2
-    //   },
-    //  })
+    this.setState({ 
+      firstCard: {
+        ...card1, index: index1
+      },
+      secondCard: {
+        ...card2, index: index2
+      },
+     })
     
      // 4 je compare mes deux cartes qui sont stoker dans le state 
-      if(card1.name === card2.name) {
-        this.handleCounterComputer()
-        this.iA();
-      }
+      // if(card1.name === card2.name) {
+      //   this.handleCounterComputer()
+      //   // this.iA();
+      // }
 
     // Si les cartes sont identique 
     // j'incrimente le conteur de l'ia
