@@ -42,7 +42,7 @@ class App extends Component {
     this.iA = this.iA.bind(this)
 
     // Shuffle = mélange les cartes
-    const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
+    // const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
   }
   
   //--- Définit un ordre des fonctions
@@ -51,8 +51,10 @@ class App extends Component {
       this.compare()
     }
 
-    if (prevState.amIPlaying && !this.state.amIPlaying){
-      this.iA()
+    if (prevState.amIPlaying && !this.state.amIPlaying) {
+      if(this.state.cardsClicked.length !== this.state.cards.length) {
+        this.iA()
+      }
     }
   }
 
@@ -85,25 +87,24 @@ class App extends Component {
 
   //--- Fonction qui compare les deux cartes retournées
   compare () {
-    const { amIPlaying } = this.state
+    const { amIPlaying, cardsClicked, firstCard, secondCard } = this.state
 
-    if (this.state.firstCard.name === this.state.secondCard.name){
-      const newArray = [...this.state.cardsClicked]
-      if (!newArray.some((e) => e.name === this.state.firstCard.name)) {
-        newArray.push(this.state.firstCard)
+    if (firstCard.name === secondCard.name){
+      let newArray = [...cardsClicked]
+      if (!newArray.some((e) => e.name === firstCard.name)) {
+        newArray = [...newArray, firstCard, secondCard]
       }
       
       setTimeout (()=> {
         this.setState ({
           firstCard : null,
           secondCard : null,
-          cardsClicked : newArray,
-          amIPlaying: !this.state.amIPlaying
+          cardsClicked : newArray
         })
 
         if (amIPlaying){
           this.handleCounterPlayer()
-        }else {
+        } else {
           this.handleCounterComputer()
         }
 
@@ -118,7 +119,7 @@ class App extends Component {
         this.setState ({
           firstCard : null,
           secondCard : null,
-          amIPlaying: !this.state.amIPlaying
+          amIPlaying: !amIPlaying
         })
       },2000)
       // Appeler la fonction IA
@@ -136,6 +137,24 @@ class App extends Component {
     
     let index1 = Math.floor(Math.random() * (max - min + 1) + min);
     let index2 = Math.floor(Math.random() * (max - min + 1) + min);
+    
+    console.log(this.state.cardsClicked)
+    
+    while(this.state.cardsClicked.map(e => e.index).includes(index1) || index1 === index2){
+      console.log(this.state.cardsClicked.map(e => e.index))
+      console.log(index1)
+      index1 = Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    while(this.state.cardsClicked.map(e => e.index).includes(index2) || index1 === index2){
+      console.log(this.state.cardsClicked.map(e => e.index))
+      console.log(index2)
+      index2 = Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    console.log("1", this.state.cardsClicked.map(e => e.index).includes(index1))
+    console.log("2", this.state.cardsClicked.map(e => e.index).includes(index2))
+
     console.log('message', index1);
     console.log('message', index2);
     
@@ -143,11 +162,8 @@ class App extends Component {
     // créer deux variables chaque variables vont représenter un index de cards
 
     const card1 = this.state.cards[index1];
-    console.log('card1', card1);
-
     const card2 = this.state.cards[index2];
-    console.log('card1', card2);
-
+  
     // 3 je les stoker dans mes state inutile pour cette action
     this.setState({ 
       firstCard: {
@@ -211,7 +227,11 @@ class App extends Component {
             <>
               <header className="d-flex justify-content-between align-items-center">
                 <Restart/>
-                <h1> MEMORY GAME</h1>
+                <h1 className={`
+                  ${this.state.theme === "onePiece" && "font-op"}
+                  ${this.state.theme === "lotr" && "font-lotr"}
+                  ${this.state.theme === "minions" && "font-minions"}`
+                }> MEMORY GAME</h1>
                 <div className="d-flex align-items-center">
                   <Theme onClick={this.handleSelectChange}/>
                   <button
@@ -220,7 +240,7 @@ class App extends Component {
                     className="bouton-rules">
                       Rules
                   </button>
-                  { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
+                  { this.state.showPopup && <Rules onClick={this.togglePopupRules()} /> }
                   </div>
               </header>
 
@@ -229,12 +249,13 @@ class App extends Component {
                 <div className="row">
                 {cards.map((card, index) => {
                     if (cardsClicked.some((e) => e.name === card.name)) {
-                      return <div className="container-op col-1">
+                      return <div key={index} className="container-op col-1">
 
                       </div>
                     }
 
                     return <Card 
+                      key={index}
                       name= {card.name}
                       image= {card.imageRecto}
                       backCard= {card.back} 

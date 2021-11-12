@@ -3,6 +3,16 @@
   src: url(/src/font/one-piece-font.ttf);
 }
 
+@font-face {
+  font-family: Lord of The Rings;
+  src: url(/src/font/lotr-font.ttf);
+}
+
+@font-face {
+  font-family: Minions;
+  src: url(/src/font/minions-font.ttf);
+}
+
 body{
   background-image: url('../src/wood-bg.png');
 }
@@ -14,12 +24,23 @@ header{
 
 /* Titre du jeu */
 h1{
-  font-family: One Piece;
   font-size: 100px;
   text-align: center;
   color: #fff;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
   padding: 20px;
+}
+
+.font-op{
+  font-family: One Piece;
+}
+
+.font-lotr{
+  font-family: Lord of The Rings;
+}
+
+.font-minions{
+  font-family: Minions;
 }
 
 .bouton-rules{
