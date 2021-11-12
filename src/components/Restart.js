@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../global-css/restart-style.css'
 
 class Restart extends Component {
 

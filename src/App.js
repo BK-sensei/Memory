@@ -217,8 +217,8 @@ class App extends Component {
                   <button
                     onClick={this.togglePopupRules}
                     type="button"
-                    className="btn btn-primary">
-                      Règles du jeu
+                    className="bouton-rules">
+                      Rules
                   </button>
                   { this.state.showPopup && <Rules onClick={this.togglePopupRules.bind()} /> }
                   </div>
