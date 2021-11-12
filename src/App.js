@@ -245,7 +245,7 @@ class App extends Component {
                     className="bouton-rules">
                       Rules
                   </button>
-                  { this.state.showPopup && <Rules onClick={this.togglePopupRules()} /> }
+                  { this.state.showPopup && <Rules onClick={this.togglePopupRules} /> }
                   </div>
               </header>
 
