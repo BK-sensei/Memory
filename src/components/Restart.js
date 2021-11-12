@@ -3,6 +3,7 @@ import '../global-css/restart-style.css'
 
 class Restart extends Component {
 
+
     render(){
         return (
 
@@ -14,7 +15,6 @@ class Restart extends Component {
         
       );
 }
-
 }
 
 export default Restart;

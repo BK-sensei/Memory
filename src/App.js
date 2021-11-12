@@ -14,6 +14,7 @@ import Theme from './components/Theme';
 import Rules from './components/Rules';
 
 
+
 class App extends Component {
 
   constructor () {
@@ -21,12 +22,13 @@ class App extends Component {
 
     // Initial State
     this.state = {
+      // myTurn: false,
       showPopup: false,
-      counterPlayer : 0,
-      counterComputer : 0,
+      counterPlayer: 0,
+      counterComputer: 0,
       firstCard: null,
       secondCard: null,
-      cards : [...onePiece, ...onePiece],
+      cards: [...onePiece, ...onePiece],
       cardsClicked: [],
       theme: "onePiece",
       amIPlaying: true
@@ -42,7 +44,7 @@ class App extends Component {
     this.iA = this.iA.bind(this)
 
     // Shuffle = mélange les cartes
-    const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
+    // const shuffledCards = this.state.cards.sort((a, b) => 0.5 - Math.random());
   }
   
   //--- Définit un ordre des fonctions
@@ -71,7 +73,7 @@ class App extends Component {
   //--- Fonction qui compte les points de l'ordinateur
   handleCounterComputer () {
     // if computer win
-    this.setState ({ counterComputer : this.state.counterComputer + 1})
+    this.setState({ counterComputer: this.state.counterComputer + 1 })
   }
 
   //--- Fonction qui retourne deux cartes à l'aide d'un click
@@ -79,11 +81,14 @@ class App extends Component {
     const {firstCard, secondCard, cards} = this.state
 
     if (!firstCard) {
-      this.setState ({firstCard : {...cards[index], index : index}})
+      this.setState({ firstCard: { ...cards[index], index: index }, isDisable: true })
     } else if (!secondCard) {
-      this.setState ({secondCard : {...cards[index], index : index}})
+      this.setState({ secondCard: { ...cards[index], index: index }, isDisable: true })
     }
-  } 
+    this.setState({
+      disabled: true,
+    });
+  }
 
   //--- Fonction qui compare les deux cartes retournées
   compare () {
@@ -94,12 +99,11 @@ class App extends Component {
       if (!newArray.some((e) => e.name === firstCard.name)) {
         newArray = [...newArray, firstCard, secondCard]
       }
-      
-      setTimeout (()=> {
-        this.setState ({
-          firstCard : null,
-          secondCard : null,
-          cardsClicked : newArray
+      setTimeout(() => {
+        this.setState({
+          firstCard: null,
+          secondCard: null,
+          cardsClicked: newArray
         })
 
         if (amIPlaying){
@@ -121,20 +125,17 @@ class App extends Component {
           secondCard : null,
           amIPlaying: !amIPlaying
         })
-      },2000)
+      }, 2000)
       // Appeler la fonction IA
     }
-  } 
+  }
 
   //--- Fonction pour que l'ordinateur joue 
   iA() {
-
-    // Genérer deux chiffres aléatoires qui vont correspondre aux index des cartes
-
-    // Je génère deux chiffres aléatoires
+    // Je génère deux chiffres aléatoires qui vont correspondre aux index des cartes
     let min = 0;
     let max = this.state.cards.length - 1;
-    
+
     let index1 = Math.floor(Math.random() * (max - min + 1) + min);
     let index2 = Math.floor(Math.random() * (max - min + 1) + min);
     
@@ -160,7 +161,6 @@ class App extends Component {
     
     // 2 J'UTILISE MES INDEX POUR RECUPERER LES Deux CARTES DANS LE TABLEAUU CARDS
     // créer deux variables chaque variables vont représenter un index de cards
-
     const card1 = this.state.cards[index1];
     const card2 = this.state.cards[index2];
   
@@ -180,16 +180,22 @@ class App extends Component {
       //   // this.iA();
       // }
 
-    // Si les cartes sont identique 
-    // j'incrimente le conteur de l'ia
-    // je renisialise les state a null // INUTILE POUR CETTE ACTION
+    // 4 je compare mes deux cartes qui sont stoker dans le state 
+    if (card1.name === card2.name) {
+      // Si les cartes sont identiques alors j'incrémente le compteur de points de l'ia 
+      this.handleCounterComputer();
+      // l'Ia puet continuer de jouer
+      this.iA();
+    }
+
+    // je reniTialise les state a null // INUTILE POUR CETTE ACTION
     // l'ia continue a jouer
     // sinon c'est le tour de sevrain
-    // je renisialise les sate a null
+    // je renitialise les states a null
   }
 
   // Fonction qui compare les deux cartes retournées
-  // Si les cartes sont identique je continue a jouer
+  // Si les cartes sont identiques alors je continue à jouer
   // sinon c'est le tour de l'Ia
 
 
@@ -217,13 +223,12 @@ class App extends Component {
     
 
   render() {
-    const {counterPlayer, counterComputer, cards, cardsClicked} = this.state
+    const { counterPlayer, counterComputer, cards, cardsClicked } = this.state
     const result = counterPlayer + counterComputer < 12
     return (
-
       <>
-        
         { result ? (
+
             <>
               <header className="d-flex justify-content-between align-items-center">
                 <Restart/>
@@ -268,14 +273,12 @@ class App extends Component {
                   })}
                 </div>
               </div>
-          
-            </>
+          </>
         ) : (
           <Victory counterPlayer={counterPlayer} counterComputer={counterComputer} />
-          )
+        )
         }
       </>
-      
     );
   }
 }
