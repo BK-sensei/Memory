@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../rules-style.css';
+import '../global-css/rules-style.css';
 
 class Rules extends Component {
     render() {

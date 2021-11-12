@@ -34,7 +34,7 @@ h1 {
     -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, 0.159);
     -moz-box-shadow: 0 0 50px rgba(255, 255, 255, 0.159);
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.159);
-    background-image: url(./img/merry.jpg);
+    background-image: url(../img/merry.jpg);
     background-size: cover;
     background-position: center;
     /* margin-bottom: 500px; */

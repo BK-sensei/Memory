@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../theme-style.css'
+import '../global-css/theme-style.css'
 
 class Theme extends Component {
     render() {

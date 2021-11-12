@@ -7,6 +7,7 @@ body{
   background-image: url('../src/wood-bg.png');
 }
 
+/* Titre du jeu */
 h1{
   font-family: One Piece;
   font-size: 100px;
@@ -17,60 +18,7 @@ h1{
 }
 
 
-p {
-  text-align: center;
-  font-weight: 300;
-  font-size: 32px;
-  color: #f6f1f1;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
-}
-
-.box {
-  border-radius: 20px;
-  width: 1100px;
-  height: 630px;
-  padding: 50px;
-  top: 50%;
-  left: 0;
-  right: 50%;
-  bottom: 50%;
-  margin: auto;
-  -webkit-box-shadow: 0 35px 20px #777;
-  -moz-box-shadow: 0 35px 20px #777;
-  box-shadow: 0 35px 20px #777;
-  background-image: url(./img-onepiece/one-piece-bckg.jpg);
-  background-size: cover;
-}
-
-.box h2 {
-  font-size: 60px;
-  margin-bottom: 40px;
-}
-
-.counter {
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-family: One piece;
-  src: url(/src/font/one-piece-font.ttf);
-  font-size: 30px;
-  text-align: center;
-  margin-left: -60px;
-  padding-bottom: 20px;
-}
-
-.counterMargin {
-  margin: 10px 10px;
-}
-
-.marginScorePlayer {
-  margin-left: 50px;
-}
-
-.marginScoreComputer {
-  margin-right: 50px;
-}
+/* Bouton Restart */
 
 .Rbutton button {
   color: rgb(0, 0, 0);

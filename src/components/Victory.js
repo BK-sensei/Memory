@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Restart from './Restart';
-import '../victory-style.css'
+import '../global-css/victory-style.css'
 
 class Victory extends Component {
     
