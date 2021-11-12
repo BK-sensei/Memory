@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Restart from './Restart';
-import '../victory-style.css'
+import '../global-css/victory-style.css'
 
 class Victory extends Component {
     
@@ -15,9 +15,9 @@ class Victory extends Component {
                             <div className="section"> 
                                 <div className="sect"> 
                                     <h1> Vous avez gagné !!! </h1>
+                                    <Restart />
                                 </div>
                             </div>
-                            <Restart />
                         </div>
                         
                 ) : 
@@ -25,9 +25,9 @@ class Victory extends Component {
                         <div className="section1"> 
                             <div className="sect"> 
                                 <h1> Vous avez perdu !!! </h1>
+                                <Restart />
                             </div>
                         </div>
-                        <Restart />
                     </div>
             } 
                 

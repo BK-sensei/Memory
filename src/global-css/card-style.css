@@ -1,4 +1,4 @@
-/* CARD.JS */
+/* STYLE DES CARTES */
 
 .characterCard {
     width: 100%;
@@ -99,6 +99,7 @@ h4{
 }
   
 .is-flipped {
+    pointer-events: none;
     /* transform: rotateY(180deg) !important; */
     transform: rotate3d(0, 1, 0, 180deg) !important;
 }
