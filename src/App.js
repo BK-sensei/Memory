@@ -42,7 +42,7 @@ class App extends Component {
     this.iA = this.iA.bind(this)
 
     // Shuffle = mélange les cartes
-    // const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
+    const shuffledCards = this.state.cards.sort((a,b) => 0.5 - Math.random())  
   }
   
   //--- Définit un ordre des fonctions
