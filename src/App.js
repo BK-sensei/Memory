@@ -28,7 +28,7 @@ class App extends Component {
       counterComputer: 0,
       firstCard: null,
       secondCard: null,
-      cards: [...onePiece, ...onePiece],
+      cards: [...onePiece, ...onePiece].sort((a, b) => 0.5 - Math.random()),
       cardsClicked: [],
       theme: "onePiece",
       amIPlaying: true
@@ -43,8 +43,6 @@ class App extends Component {
     this.compare = this.compare.bind(this)
     this.iA = this.iA.bind(this)
 
-    // Shuffle = mélange les cartes
-    const shuffledCards = this.state.cards.sort((a, b) => 0.5 - Math.random());
   }
   
   //--- Définit un ordre des fonctions
