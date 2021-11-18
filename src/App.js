@@ -56,6 +56,7 @@ class App extends Component {
         this.iA()
       }
     }
+  
   }
 
   //--- Fonctions Rules Pop Up
@@ -112,10 +113,6 @@ class App extends Component {
 
       },2000)
 
-      // if (this.state.amIPlaying === true){
-      //   amIPlaying === false
-      // }
-
     } else {
       setTimeout (()=> {
         this.setState ({
@@ -124,7 +121,6 @@ class App extends Component {
           amIPlaying: !amIPlaying
         })
       }, 2000)
-      // Appeler la fonction IA
     }
   }
 
@@ -204,17 +200,17 @@ class App extends Component {
     if (value === "onePiece") {
       this.setState({
         theme: value,
-        cards: [...onePiece, ...onePiece]
+        cards: [...onePiece, ...onePiece].sort((a, b) => 0.5 - Math.random())
       })
     } else if (value === "lotr") {
       this.setState({
         theme: value,
-        cards: [...lotr, ...lotr]
+        cards: [...lotr, ...lotr].sort((a, b) => 0.5 - Math.random())
       })
     } else if (value === "minions") {
       this.setState({
         theme: value,
-        cards: [...minions, ...minions]
+        cards: [...minions, ...minions].sort((a, b) => 0.5 - Math.random())
       })
     }
   }
